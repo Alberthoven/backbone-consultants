@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Consultores</title>
+</head>
+<body>
+
+    <link rel="stylesheet" href="css/base.css">
+
+    <!--TEMPLATES-->
+    <script type="text/template" id="consultant-template">
+        <div class="consultant-text"><%-surname%>, <%-name%></div>
+        <div id="cb-del" class="consultant-minibtn"></div>
+        <div id="cb-edit" class="consultant-minibtn"></div>
+    </script>
+
+    <script type="text/template" id="container-template">
+        <div id='consultant-list-header'>LISTADO DE CONSULTORES</div>
+        <div id='consultant-list-body'></div>
+        <div id='consultant-list-footer'>
+            <div class='consultant-button' id="add-new-consultant">
+                <div class='consultant-button-left'>+</div><div class='consultant-button-right'>NUEVO</div>
+            </div>
+        </div>
+    </script>
+
+    <script type="text/template" id="edit-template">
+        <div id="consultant-edit-header"><%- header %></div>
+        <div id="consultant-edit-body">
+            <div class="consultant-edit-field">
+                <div class="consultant-edit-label">Nombre</div><input id="name-field" class="consultant-edit-input" value="<%-name%>"/><div id="name-validation" class="consultant-edit-validation valid"></div>
+            </div>
+            <div class="consultant-edit-field">
+                <div class="consultant-edit-label">Apellidos</div><input id="surname-field" class="consultant-edit-input" value="<%-surname%>" /><div id="surname-validation" class="consultant-edit-validation valid"></div>
+            </div>
+            <div class="consultant-edit-field">
+                <div class="consultant-edit-label">Edad</div><input id="age-field" class="consultant-edit-input" value="<%-age%>" /><div id="age-validation" class="consultant-edit-validation valid"></div>
+            </div>
+            <div class="consultant-edit-field">
+                <div class="consultant-edit-label">Proyecto</div><input id="project-field" class="consultant-edit-input" value="<%-project%>" /><div id="project-validation" class="consultant-edit-validation valid"></div>
+            </div>
+        </div>
+        <div id="consultant-edit-footer">
+            <div class='consultant-button' id="add-save-button">
+                <div class='consultant-button-left'>+</div><div class='consultant-button-right'><%- labelButton %></div>
+            </div>
+            <div class='consultant-button' id="cancel-button">
+                <div class='consultant-button-left'>×</div><div class='consultant-button-right'>CANCELAR</div>
+            </div>
+        </div>
+    </script>
+
+    <script src="js/lib/jquery-1.10.2.min.js"></script>
+    <script src="js/lib/underscore-1.5.0.js"></script>
+    <script src="js/lib/backbone-1.1.2.js"></script>
+    <script src="js/lib/backbone.localStorage.js"></script>
+
+    <!-- MModelo -->
+    <script src="js/app/model/ConsultantModel.js"></script>
+    <script src="js/app/collection/ConsultantsCollection.js"></script>
+
+    <!-- Vistas -->
+    <script src="js/app/view/ConsultantsContainer.js"></script>
+    <script src="js/app/view/ConsultantListsView.js"></script>
+    <script src="js/app/view/ConsultantDetailView.js"></script>
+    <script src="js/app/view/AddOrEditConsultant.js"></script>
+
+    <script src="js/app/controller/ConsultantController.js"></script>
+    <script src="js/app/router/AppRouter.js"></script>
+    <script src="js/app/app.js"></script>
+    
+    <div id="consultant-header"><div>Consultores</div></div>
+    <div id="consultant-body">
+
+    </div>
+</body>
+</html>
